@@ -20,14 +20,14 @@ app.listen(port,()=>{
     console.log("Listening on port: "+port);
 });
 
-https.createServer({
-    key: fs.readFileSync('/etc/letsencrypt/archive/seanmurdock.cit270.com/privkey1.pem'),//this is a private key
-    cert: fs.readFileSync('/etc/letsencrypt/archive/seanmurdock.cit270.com/cert1.pem'),//this is the certificate chain
-    ca: fs.readFileSync('/etc/letsencrypt/archive/seanmurdock.cit270.com/chain1.pem')//this is the certificate chain
-  }, app).listen(port, () => {
-    redisClient.connect();//the API Server is trying to connect with Redis
-    console.log('Listening...')
-  });
+// https.createServer({
+//     key: fs.readFileSync('/etc/letsencrypt/archive/seanmurdock.cit270.com/privkey1.pem'),//this is a private key
+//     cert: fs.readFileSync('/etc/letsencrypt/archive/seanmurdock.cit270.com/cert1.pem'),//this is the certificate chain
+//     ca: fs.readFileSync('/etc/letsencrypt/archive/seanmurdock.cit270.com/chain1.pem')//this is the certificate chain
+//   }, app).listen(port, () => {
+//     redisClient.connect();//the API Server is trying to connect with Redis
+//     console.log('Listening...')
+//   });
 
 app.get('/',(req,res)=>{
     // res.redirect(301,'https://google.com');
